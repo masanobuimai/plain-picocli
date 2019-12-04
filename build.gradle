@@ -1,0 +1,22 @@
+plugins {
+  id 'com.palantir.graal' version '0.6.0'
+  id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '8'
+
+graal {
+  mainClass 'com.example.MyCommand'
+  outputName 'myApp'
+  option '--report-unsupported-elements-at-runtime'
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'info.picocli:picocli:4.1.1'
+}
